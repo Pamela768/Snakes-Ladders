@@ -13,10 +13,10 @@ class MyApp(Tk):
     def __init__(self):
         super().__init__()
         self.title("Snakes & Ladders")
-        self.iconbitmap(r"C:\Users\Pamela\Documents\GTB\Project\S and L\snake-pic.ico") #Logo used
+        self.iconbitmap(r"\snake-pic.ico") #Logo used
         pygame.init() # Initializes pygame for sound
-        pygame.mixer.init() # initalizes music
-        self.play_music()
+        pygame.mixer.init() # Initalizes music
+        self.play_music() #Executes function for playing music
         
        
     
@@ -24,7 +24,7 @@ class MyApp(Tk):
         
         # Create frames for different screens
         self.frame1 = Frame(self) #Frame for first page (menu)
-        self.frame2 = Frame(self) #frame for second page (game)
+        self.frame2 = Frame(self) #Frame for second page (game)
     
 
         self.position = 0  # Player 1's position
@@ -46,8 +46,8 @@ class MyApp(Tk):
         self.player2_label.pack(pady=5)
         self.dice = ttk.Button(self.frame2, text ="Dice", command = None ) # Initalizes dice button
         
-        self.music_on = ImageTk.PhotoImage(Image.open(r"C:\Users\Pamela\Documents\GTB\Project\S and L\volume_small.jpg")) # Button to turn game on
-        self.music_off = ImageTk.PhotoImage(Image.open(r"C:\Users\Pamela\Documents\GTB\Project\S and L\volume_off (1).jpg")) # Button to turn game off
+        self.music_on = ImageTk.PhotoImage(Image.open(r"\volume_on.jpg")) # Button to turn game on
+        self.music_off = ImageTk.PhotoImage(Image.open(r"\volume_off (1).jpg")) # Button to turn game off
         
        
         self.button = Button(self, image=self.music_on, command=self.change_image) #Creates button for executing the command for changing vlume
@@ -366,7 +366,7 @@ class MyApp(Tk):
     def play_music(self):
         """Play background music in a loop."""
         global music  # Declare music as a global variable
-        music = r"C:\Users\Pamela\Documents\GTB\Project\S and L\music.mp3"
+        music = r"\music.mp3"
         pygame.mixer.music.load(music)  # Load the music file
         pygame.mixer.music.play(loops=-1)  # Play the music in an infinite loop
 
